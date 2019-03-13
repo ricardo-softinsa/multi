@@ -4,6 +4,7 @@ pipeline{
         stage('First Dev'){
             steps{
                 echo "${env.GIT_BRANCH}"
+                echo bat(returnStdout: true, script: 'set')
                 script{                
                     if (env.BRANCH_NAME == "dev") {                                          
                         echo "First Dev"
