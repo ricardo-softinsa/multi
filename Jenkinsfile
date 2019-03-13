@@ -4,6 +4,7 @@ pipeline{
         stage('First Dev'){
             steps{
                 echo bat(returnStdout: true, script: 'set')
+                echo "Something new"
                 echo "${env.GIT_BRANCH}"
                 script{                
                     if (env.GIT_BRANCH == "origin/dev") {                                          
@@ -37,7 +38,7 @@ pipeline{
                 echo "${env.GIT_BRANCH}"
                 script{                
                     if (env.GIT_BRANCH == "origin/master") {                                          
-                        echo "Second Prod"
+                        echo "Second Prod..."
                     }   
                 }
             }
