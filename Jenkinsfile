@@ -3,6 +3,7 @@ pipeline{
     stages{
         stage('First Dev'){
             steps{
+                echo "${env.BRANCH_NAME}"
                 script{                
                     if (env.BRANCH_NAME == "dev") {                                          
                         echo "First Dev"
