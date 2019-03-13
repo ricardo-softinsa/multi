@@ -27,7 +27,7 @@ pipeline{
                 echo "${env.GIT_BRANCH}"
                 script{                
                     if (env.GIT_BRANCH == "origin/dev") {                                          
-                        echo "First Dev"
+                        echo "Second Dev"
                     }   
                 }
             }
@@ -37,7 +37,7 @@ pipeline{
                 echo "${env.GIT_BRANCH}"
                 script{                
                     if (env.GIT_BRANCH == "origin/master") {                                          
-                        echo "First Prod"
+                        echo "Second Prod"
                     }   
                 }
             }
