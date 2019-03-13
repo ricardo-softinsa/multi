@@ -2,6 +2,9 @@ pipeline{
     agent any
     stages{
         stage('First Dev'){
+            when{
+                tag 'gr'
+            }
             steps{
                 checkout scm
                 echo bat(returnStdout: true, script: 'set')
