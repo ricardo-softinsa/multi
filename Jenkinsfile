@@ -16,6 +16,7 @@ pipeline{
         stage('First Prod'){
             steps{
                 echo "${env.GIT_BRANCH}"
+                echo "Something new"
                 script{                
                     if (env.GIT_BRANCH == "origin/master") {                                          
                         echo "First Prod"
