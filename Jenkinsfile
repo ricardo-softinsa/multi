@@ -3,10 +3,9 @@ pipeline{
     stages{
         stage('First Dev'){
             steps{
-                echo "${env.GIT_BRANCH}"
-                echo bat(returnStdout: true, script: 'set')
+                //echo bat(returnStdout: true, script: 'set')
                 script{                
-                    if (env.BRANCH_NAME == "dev") {                                          
+                    if (env.BRANCH_NAME == "origin/dev") {                                          
                         echo "First Dev"
                     }   
                 }
@@ -15,7 +14,7 @@ pipeline{
         stage('First Prod'){
             steps{
                 script{                
-                    if (env.BRANCH_NAME == "master") {                                          
+                    if (env.BRANCH_NAME == "origin/master") {                                          
                         echo "First Prod"
                     }   
                 }
@@ -24,7 +23,7 @@ pipeline{
         stage('Second Dev'){
             steps{
                 script{                
-                    if (env.BRANCH_NAME == "dev") {                                          
+                    if (env.BRANCH_NAME == "origin/dev") {                                          
                         echo "First Dev"
                     }   
                 }
@@ -33,7 +32,7 @@ pipeline{
         stage('Second Prod'){
             steps{
                 script{                
-                    if (env.BRANCH_NAME == "master") {                                          
+                    if (env.BRANCH_NAME == "origin/master") {                                          
                         echo "First Prod"
                     }   
                 }
