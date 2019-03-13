@@ -36,14 +36,11 @@ pipeline{
             }
         }
         stage('Second Prod'){
-            when{
-                tag "release"
-            }
             steps{
                 echo "${env.GIT_BRANCH}"
                 script{                
                     if (env.GIT_BRANCH == "origin/master") {                                          
-                        echo "Second Prod...."
+                        echo "Second Prod"
                     }   
                 }
             }
