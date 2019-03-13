@@ -11,8 +11,8 @@ pipeline{
                 echo "Something new"
                 echo "${env.GIT_BRANCH}"
                 script{         
-                    def tag = sh(returnStdout: true, script: "git tag --contains | head -1").trim()  
-                    if(tag){
+                    def latag = sh(returnStdout: true, script: "git tag --contains | head -1").trim()  
+                    if(latag){
                         echo "----------------"
                         echo "This\nis\njust\na\ntest"
                         echo "----------------"
