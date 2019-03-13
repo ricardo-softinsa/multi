@@ -8,8 +8,7 @@ pipeline{
                 echo "Something new"
                 echo "${env.GIT_BRANCH}"
                 script{         
-                    def tag = sh(returnStdout: true, script: "git tag --contains | head -1").trim()
-                    echo "$tag"    
+                    def tag = sh(returnStdout: true, script: "git tag --contains | head -1").trim()  
                     if(tag){
                         echo "----------------"
                         echo "This\nis\njust\na\ntest"
@@ -43,6 +42,9 @@ pipeline{
             }
         }
         stage('Second Prod'){
+            when{
+                tag "release3"
+            }
             steps{
                 echo "${env.GIT_BRANCH}"
                 script{                
