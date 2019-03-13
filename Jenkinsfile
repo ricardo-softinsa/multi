@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage('First Dev'){
             steps{
-                echo "${env.BRANCH_NAME}"
+                echo "${env.GIT_BRANCH}"
                 script{                
                     if (env.BRANCH_NAME == "dev") {                                          
                         echo "First Dev"
