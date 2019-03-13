@@ -9,7 +9,12 @@ pipeline{
                 echo "${env.GIT_BRANCH}"
                 script{         
                     def tag = sh(returnStdout: true, script: "git tag --contains | head -1").trim()
-                    echo "$tag"       
+                    echo "$tag"    
+                    if(tag){
+                        echo "----------------"
+                        echo "This\nis\njust\na\ntest"
+                        echo "----------------"
+                    }   
                     if (env.GIT_BRANCH == "origin/dev") {                                          
                         echo "First Dev"
                     }   
