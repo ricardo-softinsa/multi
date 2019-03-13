@@ -3,6 +3,7 @@ pipeline{
     stages{
         stage('First Dev'){
             steps{
+                checkout scm
                 echo bat(returnStdout: true, script: 'set')
                 echo "Something new"
                 echo "${env.GIT_BRANCH}"
