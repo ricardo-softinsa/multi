@@ -7,7 +7,9 @@ pipeline{
                 echo bat(returnStdout: true, script: 'set')
                 echo "Something new"
                 echo "${env.GIT_BRANCH}"
-                script{                
+                script{         
+                    def tag = sh(returnStdout: true, script: "git tag --contains | head -1").trim()
+                    echo "$tag"       
                     if (env.GIT_BRANCH == "origin/dev") {                                          
                         echo "First Dev"
                     }   
