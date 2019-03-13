@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage('First Dev'){
             when{
-                branch 'gr'
+                tag 'gr'
             }
             steps{
                 checkout scm
