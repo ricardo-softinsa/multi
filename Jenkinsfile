@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage('First Dev'){
             steps{
-                //echo bat(returnStdout: true, script: 'set')
+                echo bat(returnStdout: true, script: 'set')
                 echo "${env.GIT_BRANCH}"
                 script{                
                     if (env.GIT_BRANCH == "origin/dev") {                                          
