@@ -9,7 +9,7 @@ pipeline{
                 echo "${env.GIT_BRANCH}"
                 script{         
                     def latag = sh(returnStdout: true, script: "git tag --contains | head -1").trim()  
-                    echo $latag
+                    echo "$latag"
                     if(latag){
                         echo "----------------"
                         echo "This\nis\njust\na\ntest"
