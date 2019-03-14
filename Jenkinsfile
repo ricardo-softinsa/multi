@@ -2,9 +2,6 @@ pipeline{
     agent any
     stages{
         stage('First Dev'){
-            when{
-                tag 'v1.0.3' 
-            }
             steps{
                 checkout scm
                 echo bat(returnStdout: true, script: 'set')
@@ -46,6 +43,9 @@ pipeline{
             }
         }
         stage('Second Prod'){
+            when{
+                tag 'v1.0.*' 
+            }
             steps{
                 echo "${env.GIT_BRANCH}"
                 script{                
