@@ -12,12 +12,13 @@ pipeline{
                 echo "${env.GIT_BRANCH}"
                 script{         
                     def latag = sh(returnStdout: true, script: "git tag --contains | head -1").trim()  
+                    echo $latag
                     if(latag){
                         echo "----------------"
                         echo "This\nis\njust\na\ntest"
                         echo "----------------"
                     }   
-                    if (env.GIT_BRANCH == "origin/dev") {                                          
+                    if (env.GIT_BRANCH == "origin/master") {                                          
                         echo "First Dev"
                     }   
                 }
