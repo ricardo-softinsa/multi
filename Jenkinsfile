@@ -44,7 +44,7 @@ pipeline{
         }
         stage('Second Prod'){
             when{
-                tag ""
+                tag
             }
             steps{
                 echo "${env.GIT_BRANCH}"
