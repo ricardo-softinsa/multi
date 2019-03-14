@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage('First Dev'){
             when{
-                tag 'release-*' 
+                tag 'v*' 
             }
             steps{
                 checkout scm
