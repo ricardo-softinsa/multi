@@ -5,7 +5,7 @@ pipeline{
             steps{
                 checkout scm
                 echo sh(returnStdout: true, script: 'env')
-                echo "Something new..."
+                echo "Something new...."
                 echo "${env.GIT_BRANCH}"
                 script{         
                     def latag = sh(returnStdout: true, script: "git tag --contains | head -1").trim()  
